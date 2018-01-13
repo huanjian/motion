@@ -1,0 +1,27 @@
+        #no9        
+        frame1 = cv2.imread('0.jpg')       
+        f1Rows, f1Cols,cc = frame1.shape
+
+        frame2 = cv2.imread('1.jpg')       
+        f2Rows, f2Cols,cc = frame2.shape
+        
+        for i in range(f2Rows):
+            for j in range(f2Cols):
+                R1,G1,B1 = frame1[i,j]
+                R2,G2,B2 = frame2[i,j]
+                         
+                print R1, G1, B1
+                print R2, G2, B2
+                
+                
+
+                difR = abs(R2-R1)
+                difG = abs(G2-G1)
+                difB = abs(B2-B1)
+                if (difR > 160) & (difG > 160) & (difB > 160) & (difR < 220) & (difG < 220) & (difB < 220):
+                    frame2[i,j] = [difR,difG,difB]
+                else:
+                    frame2[i,j] = [0,0,0]
+
+        cv2.imshow('Frame',frame2)  
+        cv2.imwrite('result2.jpg',frame2)  

@@ -1,0 +1,52 @@
+import cv2
+import numpy as np
+ 
+# stream dari kamera atau video
+#no.1
+ 
+# jika kamera berhasil terkoneksi
+if (cap.isOpened()== False): 
+  print("gagal terhubung")
+
+#7b
+
+ 
+# stream sampai finish
+while(cap.isOpened()):
+  # capture tiap frame
+  ret, frame = cap.read()
+  if ret == True:
+    #no.4
+
+
+    #no.5
+
+
+    #no.7a
+
+
+
+    #no.6
+
+
+
+    #no.8
+
+
+    #no.2
+
+    
+    #no.3 
+    # Q untuk exit
+    if cv2.waitKey(25) & 0xFF == ord('q'):
+      break
+ 
+  # break loop
+  else: 
+    break
+ 
+# ketika selesai release semua object
+cap.release()
+ 
+# tutup semua window
+cv2.destroyAllWindows()
